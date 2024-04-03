@@ -1,0 +1,23 @@
+[
+  {
+    "id": "37bb2b6d-b0d5-4756-a8be-1a7ffacc1403",
+    "name": "Daniil",
+    "surname": "Yastrebov",
+    "email": "daniil@gmail.com",
+    "password": "123456Yd"
+  },
+  {
+    "id": "7772a421-e136-4ad9-aa5e-b19799666f56",
+    "name": "Абужапар",
+    "surname": "Гасанбеков",
+    "email": "abusroyale@gmail.com",
+    "password": "skywalker_10"
+  },
+  {
+    "id": "1b195204-0ee5-4ae2-8e21-129ffa01cc5a",
+    "name": "Леонардо",
+    "surname": "ДиКаприо",
+    "email": "leonid@mail.ru",
+    "password": "leoleo00"
+  }
+]

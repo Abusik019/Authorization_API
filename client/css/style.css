@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+
+html{
+    background-color: rgb(255, 255, 255);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    margin: 0;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+
+    width: 600px;
+    height: fit-content;
+
+    border-radius: 7px;
+}
+
+.reg_btn, .auth_btn{
+    width: 200px;
+    height: 45px;
+
+    border-radius: 5px;
+    border: none;
+
+    font-family: 'Nunito';
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+.reg_btn{
+    background-color: rgb(12, 162, 207);
+    color: white;
+}
+
+.auth_btn{
+    background-color: white;
+    color: rgb(12, 162, 207);
+
+    border: 1px solid rgb(12, 162, 207);
+}
+
+form{
+    display: none;
+}
+
+.reg_form{
+    flex-direction: column;
+    gap: 15px;
+
+    width: 400px;
+    height: fit-content;
+}
+
+.reg_form h1{
+    text-align: center;
+    color: rgb(12, 162, 207);
+
+    font-family: 'Nunito';
+    font-size: 48px;
+}
+
+.reg_form input{
+    height: 35px;
+
+    border-radius: 18px;
+    border: none;
+
+    background-color: #F2F6FF;
+    color: #757A87;
+
+    box-sizing: border-box;
+    padding: 10px;
+
+    font-family: 'Nunito';
+    font-size: 14px;
+
+    outline: none;
+}
+
+.reg_form img{
+    height: 64px;
+    width: 64px;
+
+    margin: 0 auto;
+}
+
+.reg_form label{
+    font-family: 'Nunito';
+    font-size: 16px;
+}
+
+.reg_form button{
+    font-family: 'Nunito';
+    font-size: 19px;
+
+    height: 45px;
+    border-radius: 20px;
+
+    border: none;
+    cursor: pointer;
+}
+
+
+.wrapper img{
+    position: absolute;
+
+    width: 32px;
+    height: 32px;
+
+    right: -35px;
+    top: 28px;
+
+    display: none;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    position: relative;
+}
+
+.error_message{
+    position: absolute;
+
+    width: fit-content;
+
+    white-space: nowrap;
+
+    left: 440px;
+    top: 31px;
+
+    font-family: 'Nunito';
+    font-size: 14px;
+
+    padding: 5px;
+
+    border-radius: 7px;
+
+    background-color: rgb(236, 52, 52);
+    color: #fff;
+
+    display: none;
+}
+
+#show_password{
+    position: absolute;
+    right: 15px;
+    top: 35px;
+
+    display: block;
+
+    width: 24px;
+    height: 24px;
+
+    cursor: pointer;
+}

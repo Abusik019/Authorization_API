@@ -1,0 +1,17 @@
+{
+  "name": "authorization_form",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.0",
+    "uuid": "^9.0.1"
+  }
+}
