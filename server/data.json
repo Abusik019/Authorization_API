@@ -4,20 +4,39 @@
     "name": "Daniil",
     "surname": "Yastrebov",
     "email": "daniil@gmail.com",
-    "password": "123456Yd"
+    "password": "123456Yd",
+    "isLogin": false
   },
   {
     "id": "7772a421-e136-4ad9-aa5e-b19799666f56",
     "name": "Абужапар",
     "surname": "Гасанбеков",
     "email": "abusroyale@gmail.com",
-    "password": "skywalker_10"
+    "password": "skywalker_10",
+    "isLogin": false
   },
   {
     "id": "1b195204-0ee5-4ae2-8e21-129ffa01cc5a",
     "name": "Леонардо",
     "surname": "ДиКаприо",
     "email": "leonid@mail.ru",
-    "password": "leoleo00"
+    "password": "leoleo00",
+    "isLogin": false
+  },
+  {
+    "id": "dd618ef3-0062-43be-bbf2-e113a1ad794c",
+    "name": "Бред",
+    "surname": "Пит",
+    "email": "bred_pit@mail.ru",
+    "password": "pit188dfhdj",
+    "isLogin": false
+  },
+  {
+    "id": "7af9ec8f-84d8-4f0c-892c-440c624d5e57",
+    "name": "Забит",
+    "surname": "Ибрагимов",
+    "email": "zabit438@mail.ru",
+    "password": "zabit25240974",
+    "isLogin": false
   }
 ]

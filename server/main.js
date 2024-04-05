@@ -50,6 +50,50 @@ const authServer = http.createServer((req, res) => {
                 res.end("Invalid JSON data");
             }
         });
+    } else if (method === "PATCH" && pathname === "/login") {
+        let body = [];
+
+        req.on("data", (chunk) => {
+            body.push(chunk);
+        }).on("end", () => {
+            body = Buffer.concat(body).toString();
+            try {
+                const { email, password, isLogin } = JSON.parse(body);
+
+                if (!email || !password) {
+                    res.writeHead(400);
+                    res.end("Invalid data");
+                    return;
+                }
+
+                let userFound = false;
+                data.forEach((user) => {
+                    if (user.email === email) {
+                        if (user.password === password) {
+                            user.isLogin = isLogin; 
+                            userFound = true;
+                            res.writeHead(200);
+                            res.end("Login process completed");
+
+                            writeFile(
+                                JSON.stringify(data, null, 2),
+                                res,
+                                "Data file changed successfully",
+                                "Data file changed successfully"
+                            );
+                            return; 
+                        } else {
+                            res.writeHead(406);
+                            res.end("Wrong password");
+                            return; 
+                        }
+                    }
+                });
+            } catch (error) {
+                res.writeHead(400);
+                res.end("Invalid JSON data");
+            }
+        });
     }
 });
 
