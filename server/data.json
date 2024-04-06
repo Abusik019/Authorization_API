@@ -1,42 +1,16 @@
 [
   {
-    "id": "37bb2b6d-b0d5-4756-a8be-1a7ffacc1403",
-    "name": "Daniil",
-    "surname": "Yastrebov",
-    "email": "daniil@gmail.com",
-    "password": "123456Yd",
-    "isLogin": false
-  },
-  {
-    "id": "7772a421-e136-4ad9-aa5e-b19799666f56",
+    "id": "12f9e2af-e0ce-489b-86b1-bdfbd22908a1",
     "name": "Абужапар",
     "surname": "Гасанбеков",
     "email": "abusroyale@gmail.com",
-    "password": "skywalker_10",
-    "isLogin": false
+    "password": "skywalker_10"
   },
   {
-    "id": "1b195204-0ee5-4ae2-8e21-129ffa01cc5a",
+    "id": "dc834cd4-8faf-4af2-848e-ce934163eb39",
     "name": "Леонардо",
     "surname": "ДиКаприо",
     "email": "leonid@mail.ru",
-    "password": "leoleo00",
-    "isLogin": false
-  },
-  {
-    "id": "dd618ef3-0062-43be-bbf2-e113a1ad794c",
-    "name": "Бред",
-    "surname": "Пит",
-    "email": "bred_pit@mail.ru",
-    "password": "pit188dfhdj",
-    "isLogin": false
-  },
-  {
-    "id": "7af9ec8f-84d8-4f0c-892c-440c624d5e57",
-    "name": "Забит",
-    "surname": "Ибрагимов",
-    "email": "zabit438@mail.ru",
-    "password": "zabit25240974",
-    "isLogin": false
+    "password": "leo1970dic"
   }
 ]

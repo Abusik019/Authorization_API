@@ -87,6 +87,9 @@ const authServer = http.createServer((req, res) => {
                             res.end("Wrong password");
                             return; 
                         }
+                    } else{
+                        res.writeHead(401)
+                        res.end('User is not registered')
                     }
                 });
             } catch (error) {
