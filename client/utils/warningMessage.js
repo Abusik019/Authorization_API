@@ -1,5 +1,5 @@
 export default function warningMessage(target, messageItem){
-    target.addEventListener('mouseenter', () => {
+    target?.addEventListener('mouseenter', () => {
         messageItem.style.display = 'block';
     })
 

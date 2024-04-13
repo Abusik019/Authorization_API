@@ -3,11 +3,13 @@ import warningMessage from "./utils//warningMessage.js";
 import emailValidation from "./utils/email-validation.js";
 import surnameValidation from "./utils/surname-validation.js";
 import passwordValidation from "./utils/password-validation.js";
+import showPassword from "./utils/show-password.js";
 
 //Buttons
-const regBtn = document.querySelector(".reg_btn"),
-    authBtn = document.querySelector(".auth_btn"),
-    submitBtn = document.getElementById("submit_btn");
+const   regBtn = document.querySelector(".reg_btn"),
+        authBtn = document.querySelector(".auth_btn"),
+        submitRegBtn = document.getElementById("submit_reg_btn"),
+        submitAuthBtn = document.getElementById("submit_auth_btn");
 //Forms
 const regForm = document.forms.reg_form,
     authForm = document.forms.auth_form;
@@ -16,21 +18,36 @@ const regName = document.forms.reg_form.name,
     regSurname = document.forms.reg_form.surname,
     regEmail = document.forms.reg_form.email,
     regPassword = document.forms.reg_form.password;
+
+const   authEmail = document.forms.auth_form.email,
+        authPassword = document.forms.auth_form.password; 
 //Images
 const nameWarning = document.getElementById("name_warning"),
     surnameWarning = document.getElementById("surname_warning"),
-    emailWarning = document.getElementById("email_warning"),
-    passwordWarning = document.getElementById("password_warning"),
-    showPassword = document.getElementById("show_password");
+    emailRegWarning = document.getElementById("email_reg_warning"),
+    emailAuthWarning = document.getElementById("email_auth_warning"),
+    passwordWarningReg = document.getElementById("password_reg_warning"),
+    passwordWarningAuth = document.getElementById("password_auth_warning"),
+    showAuthPassword = document.getElementById("show_auth_password"),
+    showRegPassword = document.getElementById("show_reg_password");
 //Error messages
 const errorMessageName = document.querySelector(".error_message.name"),
     errorMessageSurname = document.querySelector(".error_message.surname"),
-    errorMessageEmail = document.querySelector(".error_message.email"),
-    errorMessagePassword = document.querySelector(".error_message.password");
+    errorMessageEmailReg = document.querySelector(".error_message.email.reg"),
+    errorMessageEmailAuth = document.querySelector(".error_message.email.auth"),
+    errorMessagePasswordReg = document.querySelector(".error_message.password.reg"),
+    errorMessagePasswordAuth = document.querySelector(".error_message.password.auth");
 
 regBtn?.addEventListener("click", () => {
     regForm.style.display = "flex";
     authForm.style.display = "none";
+    authBtn.style.display = "none";
+    regBtn.style.display = "none";
+});
+
+authBtn?.addEventListener("click", () => {
+    regForm.style.display = "none";
+    authForm.style.display = "flex";
     authBtn.style.display = "none";
     regBtn.style.display = "none";
 });
@@ -54,7 +71,7 @@ regSurname?.addEventListener("input", () => {
 
 regEmail?.addEventListener("input", () => {
     if (!emailValidation(regEmail.value)) {
-        warningMessage(emailWarning, errorMessageEmail);
+        warningMessage(emailRegWarning, errorMessageEmailReg);
     }
 
     return;
@@ -62,27 +79,42 @@ regEmail?.addEventListener("input", () => {
 
 regPassword?.addEventListener("input", () => {
     if (!passwordValidation(regPassword.value)) {
-        warningMessage(passwordWarning, errorMessagePassword);
+        warningMessage(passwordWarningReg, errorMessagePasswordReg);
     }
 
     return;
 });
 
-showPassword.addEventListener("click", (e) => {
-    if (regPassword.type === "password") {
-        regPassword.type = "text";
-        e.target.src = "./image/hide.png";
-    } else {
-        regPassword.type = "password";
-        e.target.src = "./image/show.png";
+authEmail?.addEventListener("input", () => {
+    if (!emailValidation(authEmail.value)) {
+        warningMessage(emailAuthWarning, errorMessageEmailAuth);
     }
+
+    return;
+});
+
+authPassword?.addEventListener("input", () => {
+    if (!passwordValidation(authPassword.value)) {
+        warningMessage(passwordWarningAuth, errorMessagePasswordAuth);
+    }
+
+    return;
+});
+
+
+showAuthPassword.addEventListener("click", (e) => {
+    showPassword(authPassword, e)
+});
+
+showRegPassword.addEventListener("click", (e) => {
+    showPassword(regPassword, e)
 });
 
 //POST request
-async function postData() {
+async function postRegData() {
     try {
         const response = await axios.post(
-            "http://localhost:5500/authorization",
+            "http://localhost:1339/api/user/signup",
             JSON.stringify({
                 name: regName.value,
                 surname: regSurname.value,
@@ -91,14 +123,49 @@ async function postData() {
             })
         );
 
+        // http://localhost:5500/api/user/auth
+        
+        alert('Reg form')
+
         console.log("Ответ сервера:", response.status, response.statusText, response.data);
+    } catch (error) {
+        console.error("Ошибка запроса:", error);
+    }
+}
+
+regForm?.addEventListener("submit", async (e) => {
+    e.preventDefault(); 
+    e.stopPropagation();  
+    e.stopImmediatePropagation();
+
+    await postRegData();
+
+    window.history.back();
+});
+
+
+//PATCH request
+async function postAuthData() {
+    try {
+        const response = await axios.post(
+            "http://localhost:1339/api/user/login",
+            JSON.stringify({
+                email: authEmail.value,
+                password: authPassword.value,
+                isLogin: true
+            })
+        )
+
+        response.then((res) => {
+            console.log(res)
+        })
     } catch (error) {
         console.error("Ошибка запроса:", error.response.status, error.response.statusText);
     }
 }
 
-submitBtn.addEventListener("click", async (e) => {
+submitAuthBtn?.addEventListener("click", async (e) => {
     e.preventDefault();
 
-    await postData();
+    await postAuthData();
 });

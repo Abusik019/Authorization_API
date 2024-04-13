@@ -1,21 +1,27 @@
-const   error = document.querySelector('.error_message.email'),
-        emailWarning = document.getElementById('email_warning');
+const   errorReg = document.querySelector('.error_message.email.reg'),
+        errorAuth = document.querySelector('.error_message.email.auth'),
+        emailRegWarning = document.getElementById('email_reg_warning'),
+        emailAuthWarning = document.getElementById('email_auth_warning');
 
 
-export default function emailValidation(emailArg){
+export default function  emailValidation(emailArg){
     if(!emailArg){
-        error.textContent = "Это поле не может быть пустым";
+        errorReg.textContent = "Это поле не может быть пустым";
+        errorAuth.textContent = "Это поле не может быть пустым";
     } else{
-        error.textContent = "Введите почту верно";
+        errorReg.textContent = "Введите почту верно";
+        errorAuth.textContent = "Введите почту верно";
     }
 
     const regExp = /^\w+@\w+\.\w+$/.test(emailArg);
 
     if(!regExp){
-        emailWarning.style.display = 'block';
+        emailRegWarning.style.display = 'block';
+        emailAuthWarning.style.display = 'block';
         return false
     } else{
-        emailWarning.style.display = 'none';
+        emailRegWarning.style.display = 'none';
+        emailAuthWarning.style.display = 'none';
         return true
     }
 }

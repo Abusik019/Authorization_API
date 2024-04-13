@@ -5,7 +5,7 @@ function writeFile(data, res, consoleMessage, resEnd){
     fs.writeFile("./data.json", data, (err) => {
         if (err) {
             console.error(
-                chalk.bgRedBright("Error writing to data file:"),
+                chalk.bgRedBright(resEnd),
                 chalk.red(err)
             );
 
@@ -17,7 +17,7 @@ function writeFile(data, res, consoleMessage, resEnd){
             );
 
             res.writeHead(200);
-            res.end(resEnd);
+            res.end(consoleMessage);
         }
     });
 }

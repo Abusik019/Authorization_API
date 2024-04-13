@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/user.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+ 
+    <title>Users</title>
+</head>
+<body>
+    <h1 class="title">Users</h1>
+    <div class="users_container">
+        <div class="btn_container">
+            <button id="all_users">All users</button>
+            <button id="reg_users">Registered users</button>
+            <button id="sort_btn">Users Sort by:</button>
+        </div>
+        <ul class="sort">
+            <li id="sort_name">Name</li>
+            <li id="sort_email">Email</li>
+            <li id="sort_reg">Register</li>
+        </ul>
+        <ul class="users"></ul>
+    </div>
+
+    <script src="./user.js" type="module"></script>
+</body>
+</html>

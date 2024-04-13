@@ -12,8 +12,10 @@
     <title>Authorization</title>
 </head>
 <body>
+    <a class="browse_users" href="./user.html">Browsing users</a>
+
     <form name="reg_form" class="reg_form">
-        <img src="./image/reg.png">
+        <div class="wrapper_img"><img src="./image/reg.png"></div>
         <h1>Registration</h1>
         <div class="wrapper name">
             <label for="name">First name</label>
@@ -30,19 +32,37 @@
         <div class="wrapper email">
             <label for="email">Email</label>
             <input type="email" name="email" placeholder="Email address" required>
-            <img src="./image/error.png" alt="" id="email_warning">
-            <div class="error_message email"></div>
+            <img src="./image/error.png" alt="" id="email_reg_warning">
+            <div class="error_message email reg"></div>
         </div>
         <div class="wrapper password">
             <label for="password">Password</label>
             <input type="password" name="password" placeholder="Password" required minlength="8" maxlength="30">
-            <img src="./image/show.png" alt="show_password" id="show_password">
-            <img src="./image/error.png" alt="error" id="password_warning">
-            <div class="error_message password"></div>
+            <img src="./image/show.png" alt="show_password" id="show_reg_password" class="show_password">
+            <img src="./image/error.png" alt="error" id="password_reg_warning">
+            <div class="error_message password reg"></div>
         </div>
-        <button id="submit_btn">Register now</button>
+        <input type="submit" id="submit_reg_btn" value="Sign up">
     </form>
-    <form name="auth_form" class="auth_form"></form>
+
+    <form name="auth_form" class="auth_form">
+        <div class="wrapper_img"><img src="./image/reg.png"></div>
+        <h1>Login</h1>
+        <div class="wrapper email">
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="Email address" required>
+            <img src="./image/error.png" alt="" id="email_auth_warning">
+            <div class="error_message email auth"></div>
+        </div>
+        <div class="wrapper password">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Password" required minlength="8" maxlength="30">
+            <img src="./image/show.png" alt="show_password" id="show_auth_password" class="show_password">
+            <img src="./image/error.png" alt="error" id="password_auth_warning">
+            <div class="error_message password auth"></div>
+        </div>
+        <button id="submit_auth_btn">Login now</button>
+    </form>
 
     <div class="buttons">
         <button class="reg_btn">Sign up</button>
