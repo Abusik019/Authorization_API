@@ -1,6 +1,6 @@
 import getUsers from "./utils/get_users.js"
 
-const USERS_URL = "http://localhost:1339/api/users";
+const BASE_API_URL = "http://localhost:1339/api";
 // Buttons
 const sortBtn = document.getElementById("sort_btn"),
     allUsersBtn = document.getElementById("all_users"),
@@ -13,7 +13,8 @@ const sortListChildren = sortList.querySelectorAll("li"),
     users = usersContainer.querySelectorAll("li"),
     sortByName = document.getElementById("sort_name"),
     sortByEmail = document.getElementById("sort_email"),
-    sortByReg = document.getElementById("sort_reg");
+    sortByReg = document.getElementById("sort_reg"),
+    verifyImages = document.querySelectorAll('.verify');
 
 // Drop List
 sortBtn.addEventListener("mouseenter", () => {
@@ -51,27 +52,33 @@ if (users?.length > 9) {
     usersContainer.style.overflowY = "auto";
 }
 
+// Load DOM
+document.addEventListener('DOMContentLoaded', async () => {
+    await getUsers(`${BASE_API_URL}/users`, usersContainer);   
+})
+
 // All users
-allUsersBtn.addEventListener("click", () => {
-    getUsers(USERS_URL, usersContainer);   
+allUsersBtn.addEventListener("click", async () => {
+    await getUsers(`${BASE_API_URL}/users`, usersContainer);   
 });
 
 // Only registered users
-regUsersBtn.addEventListener("click", () => {
-    getUsers(`${USERS_URL}?reg=true`, usersContainer);
+regUsersBtn.addEventListener("click", async () => {
+    await getUsers(`${BASE_API_URL}/users?reg=true`, usersContainer);
 });
 
 // Users sort by name
-sortByName.addEventListener("click", () => {
-    getUsers(`${USERS_URL}?filter=name`, usersContainer);
+sortByName.addEventListener("click", async () => {
+    await getUsers(`${BASE_API_URL}/users?filter=name`, usersContainer);
 });
 
 // Users sort by reg
-sortByReg.addEventListener("click", () => {
-    getUsers(`${USERS_URL}?filter=reg`, usersContainer);
+sortByReg.addEventListener("click", async () => {
+    await getUsers(`${BASE_API_URL}/users?filter=reg`, usersContainer);
 });
 
 // Users sort by email
-sortByEmail.addEventListener("click", () => {
-    getUsers(`${USERS_URL}?filter=email`, usersContainer);
+sortByEmail.addEventListener("click", async () => {
+    await getUsers(`${BASE_API_URL}/users?filter=email`, usersContainer);
 });
+

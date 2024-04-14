@@ -1,98 +1,74 @@
 [
-    {
-        "id": "3f5720dd-7bd0-48c8-83ec-4eea6d30d1a0",
-        "name": "Brad",
-        "surname": "Pit",
-        "email": "bred_pit@mail.ru",
-        "password": "sdsddsd2",
-        "isLogin": true
-    },
-    {
-        "id": "b800e60f-cb8b-4887-acb6-19f88353f401",
-        "name": "Zabit",
-        "surname": "Ibragimov",
-        "email": "akazabit438@mail.ru",
-        "password": "zabit0912",
-        "isLogin": false
-    },
-    {
-        "id": "1",
-        "name": "Alice",
-        "surname": "Johnson",
-        "email": "alice.johnson@example.com",
-        "password": "random123",
-        "isLogin": false
-    },
-    {
-        "id": "2",
-        "name": "John",
-        "surname": "Doe",
-        "email": "john.doe@example.com",
-        "password": "password123",
-        "isLogin": false
-    },
-    {
-        "id": "3",
-        "name": "Emily",
-        "surname": "Smith",
-        "email": "emily.smith@example.com",
-        "password": "qwerty",
-        "isLogin": false
-    },
-    {
-        "id": "4",
-        "name": "Michael",
-        "surname": "Brown",
-        "email": "michael.brown@example.com",
-        "password": "abc123",
-        "isLogin": false
-    },
-    {
-        "id": "5",
-        "name": "Sophia",
-        "surname": "Martinez",
-        "email": "sophia.martinez@example.com",
-        "password": "password",
-        "isLogin": false
-    },
-    {
-        "id": "6",
-        "name": "Matthew",
-        "surname": "Davis",
-        "email": "matthew.davis@example.com",
-        "password": "pass123",
-        "isLogin": false
-    },
-    {
-        "id": "7",
-        "name": "Emma",
-        "surname": "Wilson",
-        "email": "emma.wilson@example.com",
-        "password": "123456",
-        "isLogin": false
-    },
-    {
-        "id": "8",
-        "name": "Daniel",
-        "surname": "Taylor",
-        "email": "daniel.taylor@example.com",
-        "password": "daniel123",
-        "isLogin": false
-    },
-    {
-        "id": "9",
-        "name": "Olivia",
-        "surname": "Brown",
-        "email": "olivia.brown@example.com",
-        "password": "pass",
-        "isLogin": false
-    },
-    {
-        "id": "10",
-        "name": "William",
-        "surname": "Anderson",
-        "email": "william.anderson@example.com",
-        "password": "password",
-        "isLogin": false
-    }
+  {
+    "id": "3f5720dd-7bd0-48c8-83ec-4eea6d30d1a0",
+    "name": "Brad",
+    "surname": "Pit",
+    "email": "bred_pit@mail.ru",
+    "password": "sdsddsd2",
+    "isLogin": true
+  },
+  {
+    "id": "b800e60f-cb8b-4887-acb6-19f88353f401",
+    "name": "Zabit",
+    "surname": "Ibragimov",
+    "email": "akazabit438@mail.ru",
+    "password": "zabit0912",
+    "isLogin": true
+  },
+  {
+    "id": "1",
+    "name": "Alice",
+    "surname": "Johnson",
+    "email": "alice.johnson@example.com",
+    "password": "random123",
+    "isLogin": true
+  },
+  {
+    "id": "2",
+    "name": "John",
+    "surname": "Doe",
+    "email": "john.doe@example.com",
+    "password": "password123",
+    "isLogin": true
+  },
+  {
+    "id": "3",
+    "name": "Emily",
+    "surname": "Smith",
+    "email": "emily.smith@example.com",
+    "password": "qwerty",
+    "isLogin": false
+  },
+  {
+    "id": "4",
+    "name": "Michael",
+    "surname": "Brown",
+    "email": "michael.brown@example.com",
+    "password": "abc123",
+    "isLogin": false
+  },
+  {
+    "id": "5",
+    "name": "Sophia",
+    "surname": "Martinez",
+    "email": "sophia.martinez@example.com",
+    "password": "password",
+    "isLogin": false
+  },
+  {
+    "id": "6",
+    "name": "Matthew",
+    "surname": "Davis",
+    "email": "matthew.davis@example.com",
+    "password": "pass123",
+    "isLogin": false
+  },
+  {
+    "id": "7",
+    "name": "Emma",
+    "surname": "Wilson",
+    "email": "emma.wilson@example.com",
+    "password": "123456",
+    "isLogin": false
+  }
 ]

@@ -12,9 +12,6 @@ function writeFile(data, res, consoleMessage, resEnd){
             res.writeHead(500);
             res.end("Internal Server Error");
         } else {
-            console.log(
-                chalk.bgGreenBright(consoleMessage)
-            );
 
             res.writeHead(200);
             res.end(consoleMessage);

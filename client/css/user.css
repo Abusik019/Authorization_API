@@ -166,4 +166,17 @@ body{
     top: 10px;
 
     width: 50px;
+
+    cursor: pointer;
 }
+
+.users > li > .delete_item{
+    position: absolute;
+    right: 20px;
+    top: 65px;
+
+    width: 30px;
+
+    cursor: pointer;
+}
+
