@@ -4,7 +4,8 @@ const BASE_API_URL = "http://localhost:1339/api";
 // Buttons
 const sortBtn = document.getElementById("sort_btn"),
     allUsersBtn = document.getElementById("all_users"),
-    regUsersBtn = document.getElementById("reg_users");
+    regUsersBtn = document.getElementById("reg_users"),
+    resetBtn = document.getElementById('reset_btn');
 // Containers
 const sortList = document.querySelector(".sort"),
     usersContainer = document.querySelector(".users");
@@ -13,9 +14,7 @@ const sortListChildren = sortList.querySelectorAll("li"),
     users = usersContainer.querySelectorAll("li"),
     sortByName = document.getElementById("sort_name"),
     sortByEmail = document.getElementById("sort_email"),
-    sortByReg = document.getElementById("sort_reg"),
-    verifyImages = document.querySelectorAll('.verify');
-
+    sortByReg = document.getElementById("sort_reg");
 // Drop List
 sortBtn.addEventListener("mouseenter", () => {
     sortList.classList.add("active");
@@ -82,3 +81,8 @@ sortByEmail.addEventListener("click", async () => {
     await getUsers(`${BASE_API_URL}/users?filter=email`, usersContainer);
 });
 
+
+console.log(resetBtn)
+resetBtn.addEventListener('click', async () => {
+    await axios.get(`http://localhost:1339/api/users/reset`);
+})

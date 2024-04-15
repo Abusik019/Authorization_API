@@ -180,3 +180,24 @@ body{
     cursor: pointer;
 }
 
+#reset_btn{
+    position: absolute;
+
+    left: 475px;
+    top: 190px;
+
+    border: none;
+
+    background-color: rgb(12, 162, 207);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 70px;
+    width: 70px;
+
+    border-radius: 50%;
+    
+    cursor: pointer;
+}

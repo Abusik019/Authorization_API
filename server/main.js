@@ -1,4 +1,3 @@
-// Init frameworks
 require("dotenv").config();
 
 const http = require("http"),
@@ -8,6 +7,7 @@ const http = require("http"),
 const { host, port } = process.env;
 
 const data = require("./data.json");
+const resetData = require('./data-copy.json')
 
 const { writeFile, findIndex } = require("./utils/index.js");
 
@@ -274,6 +274,13 @@ const authServer = http.createServer((req, res) => {
             res.writeHead(329);
             res.end("No id param");
         }
+    } else if (method === "GET" && pathname === "/api/users/reset") {
+        writeFile(
+            JSON.stringify(resetData, null, 2),
+            res,
+            "Data written to file successfully",
+            "Data file cleared successfully"
+        );
     }
 });
 
