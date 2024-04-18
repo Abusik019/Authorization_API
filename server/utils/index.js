@@ -1,7 +1,7 @@
 const writeFile = require('./writeFile');
-const findIndex = require('./findIndex');
+const isValidIndex = require('./findIndex');
 
 module.exports = {
     writeFile,
-    findIndex
+    isValidIndex
 };

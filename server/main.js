@@ -9,7 +9,7 @@ const { host, port } = process.env;
 const data = require("./data.json");
 const resetData = require('./data-copy.json')
 
-const { writeFile, findIndex } = require("./utils/index.js");
+const { writeFile, isValidIndex } = require("./utils/index.js");
 
 const authServer = http.createServer((req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -256,25 +256,22 @@ const authServer = http.createServer((req, res) => {
 
         if (id) {
             try {
-                if (findIndex(data, id)) {
-                    writeFile(
-                        JSON.stringify(data, null, 2),
-                        res,
-                        "Data written to file successfully",
-                        "Data file cleared successfully"
-                    );
-
-                    return;
-                }
-            } catch (error) {
+                isValidIndex(data, id)
+                writeFile(
+                    JSON.stringify(data, null, 2),
+                    res,
+                    "Data written to file successfully",
+                    "Data file cleared successfully"
+                );
+            } catch (e) {
                 res.writeHead(404);
-                res.end("Item not found");
+                res.end(JSON.stringify({message: e.message}));
             }
         } else {
             res.writeHead(329);
             res.end("No id param");
         }
-    } else if (method === "GET" && pathname === "/api/users/reset") {
+    } else if (method === "POST" && pathname === "/api/users/reset") {
         writeFile(
             JSON.stringify(resetData, null, 2),
             res,

@@ -122,11 +122,6 @@ async function postRegData() {
                 password: regPassword.value,
             })
         );
-
-        // http://localhost:5500/api/user/auth
-        
-        alert('Reg form')
-
         console.log("Ответ сервера:", response.status, response.statusText, response.data);
     } catch (error) {
         console.error("Ошибка запроса:", error);

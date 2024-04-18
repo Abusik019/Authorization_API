@@ -81,8 +81,6 @@ sortByEmail.addEventListener("click", async () => {
     await getUsers(`${BASE_API_URL}/users?filter=email`, usersContainer);
 });
 
-
-console.log(resetBtn)
 resetBtn.addEventListener('click', async () => {
-    await axios.get(`http://localhost:1339/api/users/reset`);
+    await axios.post(`http://localhost:1339/api/users/reset`);
 })

@@ -1,11 +1,11 @@
-const findIndex = (data, id) => {
+const isValidIndex = (data, id) => {
     const currentIndex = data.findIndex(el => el.id === id);
     if(currentIndex !== -1){
         data.splice(currentIndex, 1);
-        return true
+        return;
     }
 
-    return false
+    throw new Error('Invalid user id')
 };
 
-module.exports = findIndex;
+module.exports = isValidIndex;
